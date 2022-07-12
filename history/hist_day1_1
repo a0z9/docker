@@ -1,0 +1,150 @@
+    1  reboot
+    2  hostname
+    3  poweroff
+    4  docker image
+    5  docker images
+    6  ping ya.ru
+    7  ping 1.1.1.1.
+    8  ping 1.1.1.1
+    9  git
+   10  git clone https://github.com/a0z9/docker
+   11  sudo apt update
+   12  cd docker/scripts/
+   13  ls -la
+   14  ./install-docker
+   15  reboot
+   16  docker ps -a
+   17  docker ps bbox1
+   18  su
+   19  service docker status
+   20  sudo service docker status
+   21  ip a
+   22  ifconfig -a
+   23  uname -a
+   24  docker images
+   25  docker pull docker/getting-started
+   26  docker images
+   27  docker image cb90
+   28  docker images inspect cb90
+   29  docker image inspect cb9
+   30  docker image inspect c
+   31  clear
+   32  docker image inspect c
+   33  docker images
+   34  docker rmi c
+   35  docker images
+   36  docker pull docker/getting-started:3a1b838d7761
+   37  docker pull docker/getting-started:latest
+   38  docker rmi c
+   39  docker pull docker/getting-started:3a1b838d77611737abf7093ac73eec42c6bd5eeb4ba73bb21a17f4c44a85ac40
+   40  docker pull docker/getting-started:3a1b8
+   41  docker pull docker/getting-started:latest
+   42  docker pull docker/getting-started:b558be874169471bd4e65bd6eac8c303b271a7ee8553ba47481b73b2bf597aae
+   43  docker pull docker/getting-started
+   44  docker run -d -p 80:80 --name gst1 docker/getting-started
+   45  docker container ls
+   46  docker run -d -p 8080:80 --name gst2 docker/getting-started
+   47  docker container ls
+   48  docker run -d -p 8080:80 --name gst2 docker/getting-started
+   49  docker run -d -p 8080:80 --name gst3 docker/getting-started
+   50  docker stop gst2
+   51  docker container ls
+   52  docker container ls -a
+   53  docker rm gst3
+   54  docker container ls -a
+   55  docker start gst2 
+   56  docker container ls -a
+   57  docker pause gst1
+   58  docker unpause gst1
+   59  docker run -dt --name bbox1 docker/busybox
+   60  docker run -dt --name bbox1 busybox
+   61  docker image
+   62  docker images
+   63  docker attach bbox1 
+   64  docker ps -a
+   65  docker attach -it bbox1 
+   66  docker attach -t bbox1 
+   67  docker attach bbox1 
+   68  docker run -dtr busybox ls
+   69  docker run -dt busybox ls
+   70  docker run -it busybox ls
+   71  docker ps -a
+   72  docker ps -q
+   73  docker ps -qa
+   74  docker rm 38
+   75  docker rm 05
+   76  docker ps -a
+   77  docker rm 4a
+   78  docker rm 4a -f
+   79  docker ps -a
+   80  docker images
+   81  docker run 
+   82  docker run --help
+   83  docker run -i --rm busybox ls -la
+   84  docker ps -a
+   85  docker run -i busybox ls -la
+   86  docker ps -a
+   87  set
+   88  docker ps -a
+   89  docker run -i busybox "echo aaa > f1; cat f1;"
+   90  docker run -i busybox ls -la
+   91  docker run -i busybox cat /etc/hosts
+   92  docker ps -a
+   93  docker ps --help
+   94  docker ps -f --help
+   95  docker ps -f
+   96  docker ps -f status=exited
+   97  docker ps -f status=exited -q
+   98  docker rm $(docker ps -f status=exited -q)
+   99  docker ps -f status=exited
+  100  docker ps -a
+  101  docker rm 3 -f
+  102  docker ps -a
+  103  docker run -i --rm busybox cat /etc/hosts
+  104  docker run -i --rm busybox whoami
+  105  docker run -i --rm busybox /bin/sh -c "whoami"
+  106  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1"
+  107  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; ifconfig"
+  108  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; ip a"
+  109  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; vim newfile"
+  110  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; vi newfile"
+  111  docker ps -a
+  112  docker exec gst2 ls -la /
+  113  docker inspect gst2
+  114  git pull
+  115  cd docker/
+  116  git pull
+  117  ls -la
+  118  vim wapp.js 
+  119  mkdir app1
+  120  cd app1/
+  121  vim Dockerfile
+  122  nano Dockerfile 
+  123  docker build -t bbimage_my
+  124  docker build -t bbimage_my .
+  125  docker images
+  126  docker run -it --name bb1 bbimage_my
+  127  docker ps -a
+  128  docker start bb1 
+  129  docker attach bb1 --detach-keys "Ctrl-x"
+  130  docker attach bb1 --detach-keys "ctrl-x"
+  131  docker ps -a
+  132  docker exec bb1 ls -la
+  133  echo $(date) > f1
+  134  docker cp 
+  135  docker cp f1 bb1:/1
+  136  docker exec bb1 cat /1/f1
+  137  docker commit --help
+  138  docker commit -a "Andrei" -m "TEst busybox with f1 file" bb1 bbimage_f1:and
+  139  docker images
+  140  docker history bbimage_f1:and 
+  141  docker images
+  142  docker tag bbimage_f1:and a0z9/bbox00:v.1
+  143  docker images
+  144  docker login
+  145  docker push a0z9/bbox00:v.1
+  146  docker build --help
+  147  cd ..
+  148  mkdir history
+  149  history
+  150  history >docker/history/hist_day1_1
