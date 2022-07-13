@@ -1,0 +1,404 @@
+    1  reboot
+    2  hostname
+    3  poweroff
+    4  docker image
+    5  docker images
+    6  ping ya.ru
+    7  ping 1.1.1.1.
+    8  ping 1.1.1.1
+    9  git
+   10  git clone https://github.com/a0z9/docker
+   11  sudo apt update
+   12  cd docker/scripts/
+   13  ls -la
+   14  ./install-docker
+   15  reboot
+   16  docker ps -a
+   17  docker ps bbox1
+   18  su
+   19  service docker status
+   20  sudo service docker status
+   21  ip a
+   22  ifconfig -a
+   23  uname -a
+   24  docker images
+   25  docker pull docker/getting-started
+   26  docker images
+   27  docker image cb90
+   28  docker images inspect cb90
+   29  docker image inspect cb9
+   30  docker image inspect c
+   31  clear
+   32  docker image inspect c
+   33  docker images
+   34  docker rmi c
+   35  docker images
+   36  docker pull docker/getting-started:3a1b838d7761
+   37  docker pull docker/getting-started:latest
+   38  docker rmi c
+   39  docker pull docker/getting-started:3a1b838d77611737abf7093ac73eec42c6bd5eeb4ba73bb21a17f4c44a85ac40
+   40  docker pull docker/getting-started:3a1b8
+   41  docker pull docker/getting-started:latest
+   42  docker pull docker/getting-started:b558be874169471bd4e65bd6eac8c303b271a7ee8553ba47481b73b2bf597aae
+   43  docker pull docker/getting-started
+   44  docker run -d -p 80:80 --name gst1 docker/getting-started
+   45  docker container ls
+   46  docker run -d -p 8080:80 --name gst2 docker/getting-started
+   47  docker container ls
+   48  docker run -d -p 8080:80 --name gst2 docker/getting-started
+   49  docker run -d -p 8080:80 --name gst3 docker/getting-started
+   50  docker stop gst2
+   51  docker container ls
+   52  docker container ls -a
+   53  docker rm gst3
+   54  docker container ls -a
+   55  docker start gst2 
+   56  docker container ls -a
+   57  docker pause gst1
+   58  docker unpause gst1
+   59  docker run -dt --name bbox1 docker/busybox
+   60  docker run -dt --name bbox1 busybox
+   61  docker image
+   62  docker images
+   63  docker attach bbox1 
+   64  docker ps -a
+   65  docker attach -it bbox1 
+   66  docker attach -t bbox1 
+   67  docker attach bbox1 
+   68  docker run -dtr busybox ls
+   69  docker run -dt busybox ls
+   70  docker run -it busybox ls
+   71  docker ps -a
+   72  docker ps -q
+   73  docker ps -qa
+   74  docker rm 38
+   75  docker rm 05
+   76  docker ps -a
+   77  docker rm 4a
+   78  docker rm 4a -f
+   79  docker ps -a
+   80  docker images
+   81  docker run 
+   82  docker run --help
+   83  docker run -i --rm busybox ls -la
+   84  docker ps -a
+   85  docker run -i busybox ls -la
+   86  docker ps -a
+   87  set
+   88  docker ps -a
+   89  docker run -i busybox "echo aaa > f1; cat f1;"
+   90  docker run -i busybox ls -la
+   91  docker run -i busybox cat /etc/hosts
+   92  docker ps -a
+   93  docker ps --help
+   94  docker ps -f --help
+   95  docker ps -f
+   96  docker ps -f status=exited
+   97  docker ps -f status=exited -q
+   98  docker rm $(docker ps -f status=exited -q)
+   99  docker ps -f status=exited
+  100  docker ps -a
+  101  docker rm 3 -f
+  102  docker ps -a
+  103  docker run -i --rm busybox cat /etc/hosts
+  104  docker run -i --rm busybox whoami
+  105  docker run -i --rm busybox /bin/sh -c "whoami"
+  106  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1"
+  107  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; ifconfig"
+  108  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; ip a"
+  109  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; vim newfile"
+  110  docker run -i --rm busybox /bin/sh -c "echo `date` > f1; cat f1; vi newfile"
+  111  docker ps -a
+  112  docker exec gst2 ls -la /
+  113  docker inspect gst2
+  114  git pull
+  115  cd docker/
+  116  git pull
+  117  ls -la
+  118  vim wapp.js 
+  119  mkdir app1
+  120  cd app1/
+  121  vim Dockerfile
+  122  nano Dockerfile 
+  123  docker build -t bbimage_my
+  124  docker build -t bbimage_my .
+  125  docker images
+  126  docker run -it --name bb1 bbimage_my
+  127  docker ps -a
+  128  docker start bb1 
+  129  docker attach bb1 --detach-keys "Ctrl-x"
+  130  docker attach bb1 --detach-keys "ctrl-x"
+  131  docker ps -a
+  132  docker exec bb1 ls -la
+  133  echo $(date) > f1
+  134  docker cp 
+  135  docker cp f1 bb1:/1
+  136  docker exec bb1 cat /1/f1
+  137  docker commit --help
+  138  docker commit -a "Andrei" -m "TEst busybox with f1 file" bb1 bbimage_f1:and
+  139  docker images
+  140  docker history bbimage_f1:and 
+  141  docker images
+  142  docker tag bbimage_f1:and a0z9/bbox00:v.1
+  143  docker images
+  144  docker login
+  145  docker push a0z9/bbox00:v.1
+  146  docker build --help
+  147  cd ..
+  148  mkdir history
+  149  history
+  150  history >docker/history/hist_day1_1
+  151  cd docker
+  152  git add .
+  153  git add *
+  154  git status
+  155  git commit -m 'add 1st Dockerfile + hist'
+  156  git config --global user.email a0z9@rambler.ru
+  157  git config --global user.name Andrei
+  158  git commit -m 'add 1st Dockerfile + hist'
+  159  git push
+  160  docker run -itd --name denis_1 faraday1903/bbox00:v3
+  161  docker ps -a
+  162  docker exec denis_1 ls -la
+  163  ls -la
+  164  sudo apt install node
+  165  sudo apt-cache search node
+  166  sudo apt-cache search nodejs
+  167  sudo apt-cache search nodejs:19
+  168  sudo apt install nodejs
+  169  node wapp.js 
+  170  docker stop $(docker ps -aq)
+  171  node wapp.js 
+  172  mkdir app2
+  173  cp wapp.js app2/
+  174  cd app2
+  175  vim Dockerfile
+  176  ls
+  177  docker build -t wappimage:v.1 .
+  178  vim Dockerfile
+  179  docker build -t wappimage:v.1 .
+  180  git add .
+  181  git status
+  182  cd ..
+  183  git status
+  184  git add .
+  185  git status
+  186  git commit -m 'wapp app2 added'
+  187  git push
+  188  docker images
+  189  docker run -d -p 8081:8080 --name w1 wappimage:v.1 
+  190  export
+  191  export | dock
+  192  export | grep dock
+  193  hostname
+  194  docker exec -i w1 export
+  195  docker exec -i w1 /bin/sh -c "export"
+  196  docker run -d -p 8082:8080 -e DOCK_HOST=$(hostname) --name w2 wappimage:v.1 
+  197  docker exec -i w2 /bin/sh -c "export"
+  198  docker ps -a
+  199  docker start gst1 gst2
+  200  docker ps -a
+  201  docker run -d --name db -p 3306:3306 -e MARIADB_ROOT_PASSWORD=pass mariadb:10.6
+  202  docker ps
+  203  docker exec db mysql -uroot -ppass -e 'show databases; select version();'
+  204  docker exec db mysql -uroot -ppass -e 'create databes mydata;'
+  205  docker exec db mysql -uroot -ppass -e 'create database mydata;'
+  206  docker exec db mysql -uroot -ppass -e 'show databases;'
+  207  docker volume ls
+  208  docker volume inspect 1c6f61fd1414e9270409366696695ad6cd931e753b4cf2b3ec04817952a907f9 
+  209  ls
+  210  su
+  211  history >docker/history/hist_day1_2
+  212  git add .
+  213  cd docker/
+  214  git add .
+  215  git commit -m 'end of day1'
+  216  history
+  217  git push
+  218  cd .. 
+  219  cat .docker/config.json 
+  220  rm .docker/config.json 
+  221  cat /etc/resolv.conf 
+  222  cat /run/systemd/resolve/resolv.conf 
+  223  iptables -L
+  224  sudo iptables -L
+  225  docker stats
+  226  ls docker/
+  227  docker ps -a
+  228  docker stats 
+  229  docker ps -a
+  230  docker rm -f 80 60 d3 72
+  231  docker ps -a
+  232  docker start --help
+  233  docker run --help
+  234  docker run -dit --name bbox1 -m 15m --cpus 0.2 busybox ping 8.8.8.8
+  235  docker stats bbox1 
+  236  docker rm -f 0f
+  237  docker run -dit --name bbox1 -m 15m --cpus 0.2 busybox /bin/sh -c "dd if=/dev/zero of=/dev/null bs=4096"
+  238  docker rm -f 9d
+  239  docker run -dit --name bbox1 -m 15m --cpus 0.1 busybox /bin/sh -c "dd if=/dev/zero of=/dev/null bs=4096"
+  240  docker rm -f cc
+  241  docker run -dit --name bbox1 -m 15m --cpus 0.5 busybox /bin/sh -c "dd if=/dev/zero of=/dev/null bs=4096"
+  242  docker rm -f 51
+  243  docker run -dit --name bbox1 -m 15m --cpus 2 busybox /bin/sh -c "dd if=/dev/zero of=/dev/null bs=4096"
+  244  docker rm -f d4
+  245  docker run -dit --name bbox1 -m 15m --cpus 3 busybox /bin/sh -c "dd if=/dev/zero of=/dev/null bs=4096"
+  246  docker rm -f ed
+  247  docker run -dit --name bbox1 -m 15m --cpus .5 busybox /bin/sh -c "dd if=/dev/zero of=/dev/null bs=4096"
+  248  docker info
+  249  docker rm -f bbox1 
+  250  docker run -dit -v /home/student/docker/shared/:/s2  --name bbox1
+  251  docker run -dit -v /home/student/docker/shared/:/s2  --name bbox1 busybox
+  252  docker ps
+  253  docker exec bbox1 ls /
+  254  docker exec bbox1 ls /s2
+  255  docker exec bbox1 cat /s2/dates
+  256  docker exec bbox1 echo $(date) >> /s2/dates
+  257  docker exec bbox1 /bin/sh -c "echo $(date) >> /s2/dates"
+  258  docker exec bbox1 /bin/sh -c "echo $(uname -a) >> /s2/dates"
+  259  docker exec bbox1 /bin/sh -c "export"
+  260  docker exec bbox1 /bin/sh -c "echo $HOSTNAME >> /s2/dates"
+  261  docker attach --detach-keys 'ctrl-z' bbox1 
+  262  docker rm -f bbox1 
+  263  docker run -dit -v /home/student/docker/shared/:/s2  --name bbox1 busybox
+  264  docker attach --detach-keys 'ctrl-z' bbox1 
+  265  docker exec bbox1 /bin/sh -c 'echo $HOSTNAME >> /s2/dates'
+  266  docker volume create vol1
+  267  docker volume ls
+  268  docker volume inspect vol1 
+  269  docker run -dit -v vol1:/s1  --name bbox2 busybox
+  270  docker volume inspect vol1 
+  271  docker exec bbox2 /bin/sh -c 'echo $HOSTNAME >> /s1/dates'
+  272  docker volume inspect vol1 
+  273  docker inspect bbox2 
+  274  docker volume ls
+  275  ls /var/lib/docker/volumes/vol1/_data
+  276  sudo ls /var/lib/docker/volumes/vol1/_data
+  277  sudo cat /var/lib/docker/volumes/vol1/_data/dates
+  278  docker volume ls
+  279  docker volume prune 
+  280  docker run -dit -v /s3  --name bbox3 busybox
+  281  docker volume ls
+  282  docker run -dit -v /s3  -v /s4 --volume /s5 --name bbox4 busybox
+  283  docker exec bbox1 /bin/sh -c "export"
+  284  docker exec bbox4 ls -la
+  285  docker volume inspect 773d97206964f5b4c46aefddab37499f529ce7932aae227caa426a1fc97b8eb2 
+  286  docker volume ls
+  287  docker inspect bbox4
+  288  docker rm -f bbox4
+  289  docker volume prune --force
+  290  ip a
+  291  docker inspect gst2
+  292  docker exec gst2 ip a
+  293  docker inspect gst2
+  294  docker run -dit -v /s3  -v /s4 --volume /s5 --name bbox5 busybox
+  295  docker inspect bbox5
+  296  docker exec bbox5 ip a
+  297  docker ps
+  298  docker inspect db
+  299  docker network create net1 -d bridge 
+  300  docker network create net2 -d bridge 
+  301  docker network inspect net2 
+  302  ip a
+  303  docker network ls
+  304  docker ps
+  305  docker exec bbox5 ip a
+  306  docker exec bbox3 ip a
+  307  ping 172.17.0.7
+  308  docker exec bbox3 ping 172.17.0.7
+  309  docker network disconnect bridge bbox5
+  310  docker exec bbox5 ip a
+  311  docker network connect net1 bbox5
+  312  docker exec bbox5 ip a
+  313  docker network connect net2 bbox5
+  314  docker exec bbox5 ip a
+  315  docker network disconnect net1 bbox5
+  316  docker exec bbox5 ip a
+  317  docker network disconnect bridge bbox3
+  318  docker network connect net2 bbox3
+  319  docker attach --detach-keys 'ctrl-z' bbox3
+  320  docker rm -f bbox3
+  321  docker run -dit --network net2 --hostname bbox3 -v /s3 --name bbox3 busybox
+  322  docker rm -f bbox5
+  323  docker run -dit --network net2 --hostname bbox5 -v /s5 -m 15m --name bbox5 busybox
+  324  docker attach --detach-keys 'ctrl-z' bbox3
+  325  cd docker/
+  326  mkdir shared
+  327  echo $(date) >> shared/dates
+  328  cat shared/dates 
+  329  docker volume ls
+  330  cat shared/dates 
+  331  ip a | rep 0242
+  332  ip a | grep 0242
+  333  ip a
+  334  ip a | rep 62
+  335  ip a | grep 62
+  336  ip a | grep 02
+  337  ip a
+  338  ip a | grep 9e
+  339  ip a | grep 07
+  340  ip a | grep 39
+  341  docker network ls
+  342  ip a | grep 4a
+  343  docker ps
+  344  docker attach --detach-keys 'ctrl-z' bbox5
+  345  docker network inspect net2
+  346  uname -a
+  347  docker run -d -p 5000:5000 --restart always --name registry registry:2
+  348  docker images
+  349  docker tag bbimage_my localhost:5000/bbimage:0.2
+  350  docker push localhost:5000/bbimage:0.2
+  351  docker images
+  352  docker rmi localhost:5000/bbimage:0.2 
+  353  docker images
+  354  docker pull localhost:5000/aaa
+  355  docker pull localhost:5000/bbimage
+  356  docker pull localhost:5000/bbimage:0.2
+  357  openssl req
+  358  mkdir regcerts
+  359  openssl req -newkey --help
+  360  openssl req -newkey rsa:4096 -nodes -sha252 -keyout regcerts/d.key -x509 -days 1000 -out regcerts/d.crt
+  361  openssl req -newkey rsa:4096 -nodes -sha256 -keyout regcerts/d.key -x509 -days 1000 -out regcerts/d.crt
+  362  ls -la regcerts/
+  363  ping dock01
+  364  ping dock01
+  365  scp regcerts/d.crt root@dock01:/home/student
+  366  scp regcerts/d.crt student@dock01:/home/student
+  367  ls /etc/docker/
+  368  mkdir -p /etc/docker/certs.d/dock02:5000
+  369  sudo mkdir -p /etc/docker/certs.d/dock02:5000
+  370  sudo cp regcerts/d.crt  /etc/docker/certs.d/dock02:5000
+  371  sudo cp regcerts/d.crt  /etc/docker/certs.d/dock02:5000/ca.crt
+  372  sudo service docker restart
+  373  docker ps -a
+  374  sudo service docker status
+  375  docker rm -f registry 
+  376  docker run -d -p 5000:5000 --restart always \-e REGISTRY_HTTP_TLS_CERTIFICATE="/home/student/docker/"    --name registry registry:2
+  377  docker run -d -p 5000:5000 --restart always \ -e REGISTRY_HTTP_TLS_CERTIFICATE="/home/student/docker/"    --name registry registry:2
+  378  docker run -d -p 5000:5000 --restart always -e REGISTRY_HTTP_TLS_CERTIFICATE="/home/student/docker/regcerts/d.crt" -e REGISTRY_HTTP_TLS_KEY="/home/student/docker/regcerts/d.key" --name registry registry:2
+  379  docker run -d -p 5000:5000 --restart always -e REGISTRY_HTTP_TLS_CERTIFICATE="/home/student/docker/regcerts/d.crt" -e REGISTRY_HTTP_TLS_KEY="/home/student/docker/regcerts/d.key" --name registry registry:2
+  380  docker tag bbimage_my dock02:5000/bbimage:0.2
+  381  docker push dock02:5000/bbimage:0.2
+  382  sudo vim /etc/hosts
+  383  docker push dock02:5000/bbimage:0.2
+  384  sudo vim /etc/hosts
+  385  docker push dock02:5000/bbimage:0.2
+  386  ls /home/student/docker/regcerts/
+  387  ls /home/student/docker/regcerts
+  388  docker run -d -p 5000:5000 --restart always -e REGISTRY_HTTP_TLS_CERTIFICATE="/certs/d.crt" -e REGISTRY_HTTP_TLS_KEY="/certs/d.key" -v /home/student/docker/regcerts/:/certs  --name registry registry:2
+  389  docker exec registry ls /certs
+  390  docker push dock02:5000/bbimage:0.2
+  391  export GODEBUG="x509ignoreCN=0"
+  392  docker push dock02:5000/bbimage:0.2
+  393  openssl req -newkey rsa:4096 -nodes -sha256 -keyout regcerts/d.key -x509 -days 1000 -out regcerts/d.crt -addext "subjectAltName = DNS:dock02"
+  394  docker rm -f registry 
+  395  openssl x509 -in regcerts/d.crt -noout -text
+  396  docker run -d -p 5000:5000 --restart always -e REGISTRY_HTTP_TLS_CERTIFICATE="/certs/d.crt" -e REGISTRY_HTTP_TLS_KEY="/certs/d.key" -v /home/student/docker/regcerts/:/certs  --name registry registry:2
+  397  docker push dock02:5000/bbimage:0.2
+  398  sudo cp regcerts/d.crt /etc/docker/certs.d/dock02\:5000/ca.crt 
+  399  docker push dock02:5000/bbimage:0.2
+  400  scp regcerts/d.crt student@dock01:/home/student/ca.crt
+  401  git add .
+  402  cd docker/
+  403  history
+  404  history >> history/day2
