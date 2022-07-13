@@ -1,0 +1,20 @@
+version: "3.9"
+
+# test service 1
+services:
+        wapsvc:
+                image: dock02:5000/wapp:0.1
+                container_name: wapp01
+                restart: always
+                ports:
+                        - "8085:8080"
+
+                volumes:
+                        - w-logger:/home/data
+
+                environment:
+                        - DOCK_HOST="$HOSTNAME"
+
+volumes:
+        w-logger:
+
