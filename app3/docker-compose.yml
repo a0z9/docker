@@ -1,0 +1,21 @@
+version: "3.9"
+
+# test service 1
+services:
+        gstsvc1:
+                image: docker/getting-started
+                container_name: gst1
+                ports:
+                        - "8081:80"
+
+        gstsvc2:
+                image: docker/getting-started
+                container_name: gst2
+                ports:
+                        - "8082:80"
+                volumes:
+                        - "/s2"                  
+
+
+#networks:
+#        net2
