@@ -20,7 +20,7 @@ services:
                 deploy:
                         resources:
                                 limits:
-                                        cpus: '0.01'
+                                        cpus: '0.12'
                                         memory: 64M
                           
 volumes:
@@ -33,5 +33,4 @@ networks:
                         driver: default
                         config:
                                 - subnet: 172.29.27.0/24
-                                  gateway: 172.29.27.1
                 
