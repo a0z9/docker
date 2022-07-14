@@ -1,0 +1,32 @@
+version: "3.9"
+
+# test service 2
+services:
+        bbox5:
+                image: busybox
+                container_name: bb15
+                command: ping 1.1.1.1
+                environment: 
+                           - LOGGER=7
+                           - DATA_DIR=/data  
+
+
+        bbox6:
+                image: busybox
+                container_name: bb16
+                volumes:
+                        - "vol2:/s2" 
+                command: dd if=/dev/zero of=/dev/null bs=4096                  
+                          
+volumes:
+        vol2:        
+
+networks:
+        default:
+                name: net56
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: 172.29.27.0/24
+                                  gateway: 172.29.27.1
+                
