@@ -1,0 +1,18 @@
+FROM scratch
+
+WORKDIR app
+
+COPY bin/hello-s .
+COPY bin/hello-d .
+COPY bin/hello-params-s .
+
+COPY lib/libc-2.31.so /lib/x86_64-linux-gnu/libc.so.6
+COPY lib/ld-2.31.so /lib64/ld-linux-x86-64.so.2
+
+ENTRYPOINT ["./hello-params-s", "1st"]
+
+#CMD ["./hello-params", "12", "17"]
+
+
+
+

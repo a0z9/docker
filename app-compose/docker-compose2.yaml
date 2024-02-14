@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  bb-pinger:
+    image: busybox
+    command: ping wapp1
+    depends_on:
+      - wapp-svc
+
+  wapp-svc:
+    image: a0z9/dock:wapp.0.5
+    ports:
+      - "8071:8080"
+    environment:
+      - DOCK_HOST=dock01-compose2
+      - VERSION=1.2
+    hostname: wapp1
+
+
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+tput setaf 2 && echo "Preparing to install..." && tput setaf 7
+
+sudo apt-get remove -y docker docker-engine docker.io containerd runc
+sudo apt-get update
+sudo apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+
+
+#sudo install -m 0755 -d /etc/apt/keyrings
+#curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+#sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+#sudo sh -c 'printf "deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable \n" > /etc/apt/sources.list.d/docker.list'
+sudo sh -c 'printf "deb [arch=amd64] https://download.docker.com/linux/debian buster stable \n" > /etc/apt/sources.list.d/docker.list'
+
+
+sudo apt-get update
+
+tput setaf 2 && echo "Installing Docker..." && tput setaf 7
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+tput setaf 2 && echo "Add user $USER to docker group..." && tput setaf 7
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+tput setaf 2 && echo "Finished." && tput setaf 7
+

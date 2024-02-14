@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  bb-pinger:
+    image: busybox:1.36.1
+    command: ping wapp-svc
+    depends_on:
+      wapp-svc:
+        condition: service_healthy
+
+  wapp-svc:
+    image: a0z9/dock:wapp.0.5
+    #image: dock01:5001/wapp:0.5
+    ports:
+      - "8076:8080"
+    environment:
+      - DOCK_HOST=dock01-compose
+      - VERSION=1.2
+    healthcheck:
+      test: wget -q --spider localhost:8081
+      interval: 4s
+      timeout: 3s
+      retries: 3
+        
+    volumes:
+      - wapp:/home/data
+
+#    hostname: wapp1
+
+volumes:
+  wapp: {}
+

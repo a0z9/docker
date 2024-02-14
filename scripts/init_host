@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [ ! -z $1 ];
+then 
+	if (($1<1 || $1>9));
+	then
+		echo Wrong number! Use from 1 to 9. & exit 1;
+
+	else
+		a=$1;
+	fi	
+else
+	echo Use number as parameter!! && exit 1;
+fi
+
+#base='172.17.17.1'
+base='192.168.56.1'
+#old_host=$(uname -n)
+
+file="/etc/NetworkManager/system-connections/Wired connection 1.nmconnection"
+hosts="/etc/hosts"
+lan=$(sudo nmcli connection show --active  | awk 'FNR==2{print $1}')
+
+sudo sed -i "s/\(address1=$base\)[0-9]\+/\1$a/" "$file"
+
+echo restart $lan ...
+
+sudo nmcli connection reload $lan
+sudo nmcli connection down $lan
+sudo nmcli connection up $lan
+
+echo add dock0$a to hostname, host, hosts...
+
+sudo sed -i "s/dock[0-9]\+/dock0$a/g" "$hosts"
+
+if grep -q "$base" "$hosts"
+then
+    sudo sed -i "s/\($base\)[0-9]\+\s\+dock[0-9]\+/\1$a\tdock0$a/g" "$hosts"
+else
+	sudo bash -c "(echo ''; echo $base$a   dock0$a) >> $hosts"
+fi
+
+sudo sysctl kernel.hostname=dock0$a
+sudo bash -c "echo dock0$a > /etc/hostname"
+sudo bash -c "echo dock0$a > /etc/host"

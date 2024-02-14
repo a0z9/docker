@@ -1,0 +1,15 @@
+FROM scratch
+
+WORKDIR app
+
+COPY bin/hello2-params .
+COPY bin/hello2 .
+
+CMD ["./hello2"]
+
+ENTRYPOINT ["./hello2-params"]
+
+CMD ["./hello3"]
+
+
+
