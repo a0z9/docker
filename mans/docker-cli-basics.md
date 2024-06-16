@@ -372,7 +372,7 @@ $ docker  run --name bb -dit --network net1 busybox
 $ docker exec wapp ping bb
 $ docker exec bb ping wapp
 ```
-выполнится успешно. Если же явно задать имя хоста при нициализации контейнера:
+выполнится успешно. Если же явно задать имя хоста при инициализации контейнера:
 ```sh
 $ docker  run --name bb -dit -h box --network net1 busybox  
 ```
