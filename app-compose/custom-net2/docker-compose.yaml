@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  bb-pinger:
+    image: busybox
+    
+    command: dd if=/dev/zero of=/dev/null 
+
+    depends_on:
+      - wapp-svc
+    deploy:
+      resources:
+        limits:
+          cpus: '0.15'
+          memory: 20M
+
+
+  wapp-svc:
+    image: a0z9/dock:wapp.0.5
+    ports:
+      - "8074:8080"
+    environment:
+      - DOCK_HOST=dock01-compose
+      - VERSION=1.2
+
+    volumes:
+      - wapp:/var/www/app
+
+    deploy:
+      resources:
+        limits:
+          memory: 30M
+
+#    hostname: wapp1
+networks:
+  default:
+    name: net3
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.55.0/24
+          gateway: 192.168.55.1
+
+volumes:
+  wapp: {}
+
+  

@@ -1,0 +1,11 @@
+FROM mariadb:10.5.5
+
+LABEL maintainer="a0z9@rambler.ru"
+
+ENV MYSQL_ROOT_PASSWORD=pass
+
+COPY init_db.sql /docker-entrypoint-initdb.d/
+
+CMD ["mysqld"]
+
+

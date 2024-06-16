@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+   mdb:
+           image: mariadb:10.4
+           restart: unless-stopped
+           ports: 
+                 - "33061:3306"
+           volumes:
+                   - mdb_volume:/var/lib/mysql    
+                   - $WORK_DIR/scripts:/home/scripts 
+           
+           environment:
+                   DOCK_HOST : $DOCK_HOST
+                   MARIADB_USER : admin
+                   MARIADB_PASSWORD : pass
+                   MARIADB_ROOT_PASSWORD : pass
+           
+networks: 
+  default: 
+    external: true 
+    name: net1
+
+volumes:
+        mdb_volume:
+
+
+
+

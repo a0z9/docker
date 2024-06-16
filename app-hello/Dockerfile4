@@ -1,0 +1,15 @@
+FROM scratch
+
+WORKDIR app
+
+COPY bin/hello-params-s .
+COPY bin/hello-s .
+
+#CMD ["./hello2"]
+
+CMD ["./hello-params-s", "12", "17", "hello!"]
+
+#CMD ["./hello3"]
+
+
+

@@ -1,0 +1,23 @@
+version: "3.9"
+
+
+services:
+  pinger:
+    image: busybox
+    command: ping 1.1.1.1
+    depends_on:
+      - wapp1
+
+    environment:
+      - VERSION=1.0
+      - MAINTAINER=sand
+  
+  wapp1:
+    image: a0z9/dock:wapp.0.5
+    ports:
+      - "8087:8080"
+    environment:
+      - DOCK_HOST=DOCK01-conf-swarm
+    deploy:
+      mode: replicated
+      replicas: 3    
