@@ -1,0 +1,12 @@
+    1  ping ya.ru
+    2  ping dock01
+    3  sudo poweroff
+    4  ip a
+    5  ping ya.ru
+    6  sudo systemctl status docker.service 
+    7  sudo systemctl status containerd.service 
+    8  id
+    9  history
+   10  mkdir ../history
+   11  cd ..
+   12  history > history/day1-1
