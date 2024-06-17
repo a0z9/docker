@@ -74,3 +74,34 @@
    74  docker search dock01.learn.local:8083/busybox
    75  curl -k https://dock01.learn.local:8083/v2/busybox/tags/list ; echo
    76  history > history/day1-1 
+   77  history
+   78  docker add .
+   79  git add .
+   80  git commit -m repos
+   81  git push
+   82  curl -k https://dock01.learn.local:8083/v2/_catalog ; echo
+   83  ssh dock01
+   84  sudo cp ca.crt /etc/docker/certs.d/dock01.learn.local\:8083/
+   85  docker search dock01.learn.local:8083/busybox
+   86  ls
+   87  ls -la ~/.docker/
+   88  cat ~/.docker/config.json 
+   89  echo ZG9ja2VyOnBhc3M=|base64 decode ; echo
+   90  echo ZG9ja2VyOnBhc3M=|base64 --decode ; echo
+   91  docker logout dock01.learn.local:8083
+   92  cat ~/.docker/config.json 
+   93  mkdir app1
+   94  mc
+   95  mcedit myfile
+   96  ls
+   97  cat myfile 
+   98  rm myfile 
+   99  nano myfile
+  100  cat myfile 
+  101  rm myfile 
+  102  cd app1/
+  103  vim Dockerfile
+  104  docker build -t bbox:v2 .
+  105  docker images 
+  106  cd ..
+  107  history > history/day1-1 
