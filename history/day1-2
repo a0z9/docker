@@ -131,3 +131,25 @@
   131  docker exec bb2 ls -la /var/data
   132  docker exec bb2 cat /var/data/5
   133  history > history/day1-2
+  134  git add .
+  135  git commit -m tags,dockerfiles
+  136  git push
+  137  docker top bb2
+  138  docker top gs
+  139  ps aux | grep nginx
+  140  docker exec bb2 ps aux
+  141  docker exec gs ps aux
+  142  docker exec bb2 ls /
+  143  docker exec -it bb2 sh
+  144  docker exec -it bb2 bash
+  145  docker exec -it gs bash
+  146  docker exec -it gs sh
+  147  docker attch bb2
+  148  docker attach bb2
+  149  docker ps
+  150  docker attach gs
+  151  docker ps
+  152  docker start gs
+  153  docker logs gs -f
+  154  history
+  155  history > history/day1-2
