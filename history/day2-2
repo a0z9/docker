@@ -283,3 +283,39 @@
   283  docker update bb --cpus 0.05
   284  docker exec -it bb sh
   285  history > history/day2-2
+  286  git ad .
+  287  git add .
+  288  git commit -m quotas
+  289  git push
+  290  lsblk -f
+  291  docker run -dit --storage-opt size=120M busybox
+  292  docker update bb2 --blkio-weight
+  293  docker volume ls
+  294  docker ps
+  295  docker rm -f wapp2
+  296  docker run -d --name wapp2 -v /var/wapp/logs  -e DOCK_HOST=`uname -n` -p 8092:8080 wapp 
+  297  docker volume ls
+  298  docker inspect wapp2 | less
+  299  docker volume inspect 131c7be97b471ee88726f34802fdc582a0baf7ad18fff044335ef6d91fee74bc 
+  300  curl localhost:8092
+  301  docker cp ca.crt wapp2:/var/wapp/logs
+  302  docker exec wapp2 ls -la /var/wapp/logs
+  303  docker exec -it wapp2 sh 
+  304  docker rm -f wapp2
+  305  docker volume inspect 131c7be97b471ee88726f34802fdc582a0baf7ad18fff044335ef6d91fee74bc 
+  306  docker volume prune -f
+  307  docker volume ls
+  308  cd app2
+  309  cp Dockerfile Dockerfile2
+  310  vim Dockerfile
+  311  docker build -t wapp-v .
+  312  docker rm -f wapp2
+  313  docker ps
+  314  docker run -d --name wapp2  -e DOCK_HOST=`uname -n` -p 8092:8080 wapp-v
+  315  docker volume ls
+  316  vim Dockerfile
+  317  docker build -t wapp-v .
+  318  docker volume ls
+  319  docker run -d --name wapp4  -e DOCK_HOST=`uname -n` -p 8094:8080 wapp-v
+  320  docker volume ls
+  321  history > ../history/day2-2
