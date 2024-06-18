@@ -319,3 +319,50 @@
   319  docker run -d --name wapp4  -e DOCK_HOST=`uname -n` -p 8094:8080 wapp-v
   320  docker volume ls
   321  history > ../history/day2-2
+  322  cd ..
+  323  git add .
+  324  git commit -m volumes
+  325  git push
+  326  sudo ls -la /var/lib/docker
+  327  cd app2
+  328  cp wapp.js wapp-log.js 
+  329  vim wapp-log.js 
+  330  cp Dockerfile Dockerfile-log
+  331  vim Dockerfile-log 
+  332  docker build -t wapp-log -f Dockerfile-log .
+  333  vim Dockerfile-log 
+  334  docker build -t wapp-log -f Dockerfile-log .
+  335  docker run -d --name wapp5  -e DOCK_HOST=`uname -n` -p 8095:8080 wapp-log
+  336  docker ps
+  337  docker logs wapp5
+  338  vim wapp-log.js 
+  339  docker build -t wapp-log -f Dockerfile-log .
+  340  docker rm wapp5
+  341  docker run -d --name wapp5  -e DOCK_HOST=`uname -n` -p 8095:8080 wapp-log
+  342  docker ps
+  343  docker exec wapp5 cat /var/wapp/logs/wapp.log
+  344  docker exec wapp5 ls /var/wapp/
+  345  docker exec wapp5 ls /var/wapp/logs
+  346  docker logs wapp5
+  347  vim wapp-log.js 
+  348  docker rm wapp5
+  349  docker build -t wapp-log -f Dockerfile-log .
+  350  docker run -d --name wapp5  -e DOCK_HOST=`uname -n` -p 8095:8080 wapp-log
+  351  docker ps
+  352  docker exec -it wapp5 sh
+  353  vim wapp-log.js 
+  354  docker build -t wapp-log -f Dockerfile-log .
+  355  docker rm wapp5
+  356  docker rm wapp5 -f
+  357  docker run -d --name wapp5  -e DOCK_HOST=`uname -n` -p 8095:8080 wapp-log
+  358  docker exec -it wapp5 sh
+  359  docker logs wapp5
+  360  docker rm -f wapp5
+  361  docker logs wapp5
+  362  vim wapp-log.js 
+  363  docker build -t wapp-log -f Dockerfile-log .
+  364  docker run -d --name wapp5  -e DOCK_HOST=`uname -n` -p 8095:8080 wapp-log
+  365  docker exec wapp5 cat /var/wapp/logs/wapp.log
+  366  ~
+  367  docker exec wapp5 cat /var/wapp/logs/wapp.log
+  368  history > ../history/day2-2
