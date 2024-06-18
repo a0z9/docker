@@ -6,6 +6,7 @@
 - https://docs.docker.com/manuals/
 - https://docker-curriculum.com/
 - https://docs.docker.com/engine/
+- https://docs.docker.com/reference/cli/docker/
 - https://docs.docker.com/reference/dockerfile/
 - https://github.com/compose-spec/compose-spec/blob/master/spec.md
 - https://docs.docker.com/reference/cli/docker/compose/
@@ -14,11 +15,12 @@
 
 
 ### Local & cloud registries
-- https://hub.docker.com/
+- [DockerHub (docker.io)](https://hub.docker.com/)
 - https://hub.docker.com/_/registry
 - https://help.sonatype.com/en/sonatype-nexus-repository.html
 - https://goharbor.io/
-- https://console.cloud.google.com/gcr/images/google-containers/GLOBAL
+- [Google (gcr.io)](https://console.cloud.google.com/gcr/images/google-containers/GLOBAL)
+- [RedHat (quay.io)](https://quay.io/search)
 
 
 ### Trainer resources
