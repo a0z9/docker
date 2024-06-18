@@ -22,7 +22,7 @@ var handler = function(request, response) {
        <title>SITE: ${host_name}</title>
      </head>
      <body>
-     <h1>Hello, Andrei!</h1>
+     <h1>Salute, Andrei!</h1>
    <h1>Welcome to docker host: ${dock_host}</h1>
      <h2>Container id: ${host_name}</h2>
      <h2>Container ip: ${host_ip}</h2>
