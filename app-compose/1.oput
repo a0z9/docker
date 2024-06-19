@@ -1,0 +1,62 @@
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:C = RU, ST = NN, L = NN, O = Andestech, OU = Docker, CN = *.dock01.learn.local
+   i:C = RU, ST = NN, L = NN, O = Andestech, OU = Docker, CN = *.dock01.learn.local
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIDqDCCApCgAwIBAgIEeuwJOzANBgkqhkiG9w0BAQsFADBrMQswCQYDVQQGEwJS
+VTELMAkGA1UECBMCTk4xCzAJBgNVBAcTAk5OMRIwEAYDVQQKEwlBbmRlc3RlY2gx
+DzANBgNVBAsTBkRvY2tlcjEdMBsGA1UEAwwUKi5kb2NrMDEubGVhcm4ubG9jYWww
+HhcNMjQwNTAxMTExNzU1WhcNMzgwMTA4MTExNzU1WjBrMQswCQYDVQQGEwJSVTEL
+MAkGA1UECBMCTk4xCzAJBgNVBAcTAk5OMRIwEAYDVQQKEwlBbmRlc3RlY2gxDzAN
+BgNVBAsTBkRvY2tlcjEdMBsGA1UEAwwUKi5kb2NrMDEubGVhcm4ubG9jYWwwggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCnbIIJlwA6+KqcLwCTDa1OJhlf
+B91v02Vull9HNKYsRQ4GH8e5uwrgqqp6+0nd9VoUrm+MdXkFCfExOxZLB0+pCkzF
+Qh17Xd4fq9W7mo5g2U9FSsC9l1ICdfVsgHsk8q7VC4MjUFLSd6BVF9m9rxwIlBLq
+7IF12+BFRAqfB1GUx3i61GH1gv8PdsU4tDUlMOdahj8OQxTA21tv/5rNld8BjDBW
+MCMXh4FLUZsZVkuaagt9Z0kCqdtDJfZywKvY+ZlBCDbWlu2tFUZuVMZJ8zE/ciZA
+wEPhNP04GH+vEkkbkHwKqeGCAfYvulkWlJbQQsx0xxrXVpwMShLfuUyQkSqtAgMB
+AAGjVDBSMAwGA1UdEwQFMAMBAf8wIwYDVR0RBBwwGoISZG9jazAxLmxlYXJuLmxv
+Y2FshwSsERGNMB0GA1UdDgQWBBR3ON2dhYIfPfpWd7KsLJDqmgLoXzANBgkqhkiG
+9w0BAQsFAAOCAQEAa9Kq9JHRJut7iGVbsv6aWqi+547fRPDmsILcvqOPFMYYi68i
+B1y+DMUKdSAgFVpQQELDqi//XoVKGa/9crS7tVZ/Rer4GyaWfpLumWk68QmGozqC
+fMytkrEwtCSrSQIi+dEaVBjPlqJo7cmhTKaar0tyszhaYmKsWEcUsECK0ITpKybp
+TWlD1BX8N2KiAPcTBsh1xyplfARofzyMfZCA/gKrVndu8rEj1DeNerf5PPpCnzcv
+ggMTmuQTkHIZsug8eufsnRGk0cC1+9AbqFwQ2v2h10DBrxwY4n1tbM5bFzaLdSgd
+sSMHylVn/GJG2HTYn3oIs/X0namz3Tih0Xn+EQ==
+-----END CERTIFICATE-----
+subject=C = RU, ST = NN, L = NN, O = Andestech, OU = Docker, CN = *.dock01.learn.local
+
+issuer=C = RU, ST = NN, L = NN, O = Andestech, OU = Docker, CN = *.dock01.learn.local
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: ECDH, P-256, 256 bits
+---
+SSL handshake has read 1428 bytes and written 419 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 4797A380B26C73FADBFDD7DBC5485C1D108D9167883AD4AE1080F37ABD077272
+    Session-ID-ctx: 
+    Master-Key: 68F9BC11C14C92C6BC2265589C69960514C86D6EC6C2E2109EE84E9C81472EDB80836A8644A9539C942D9FD23E6FFB41
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1714758614
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
