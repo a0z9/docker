@@ -8,8 +8,8 @@ services:
       - wapp-svc
 
   wapp-svc:
-    image: wapp
-    #image: a0z9/dock:wapp.0.5
+    #image: wapp
+    image: a0z9/dock:wapp.0.5
     #image: dock01:5001/wapp:0.5
     ports:
       - "8090:8080"
