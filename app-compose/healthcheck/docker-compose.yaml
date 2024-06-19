@@ -9,16 +9,16 @@ services:
         condition: service_healthy
 
   wapp-svc:
-    image: wapp
-    #image: a0z9/dock:wapp.0.5
+    #image: wapp
+    image: a0z9/dock:wapp.0.5
     #image: dock01:5001/wapp:0.5
     ports:
-      - "8094:8080"
+      - "8062:8080"
     environment:
       - DOCK_HOST=dock01-compose
       - VERSION=1.2
     healthcheck:
-      test: wget -q -s localhost:8081
+      test: wget -q --spider localhost:8080
       interval: 4s
       timeout: 3s
       retries: 3
