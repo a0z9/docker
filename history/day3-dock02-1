@@ -1,0 +1,16 @@
+    1  ls -la /etc/docker/
+    2  ls -la /etc/docker/certs.d/dock01.learn.local\:8083/
+    3  docker swarm join --token SWMTKN-1-104l6ydg3v1sewj179grqz99x8sygbahj2au9illgmmupglhsu-66kckp6flq436gyz81mesbfo2 172.17.17.143:2377
+    4  docker ps -a
+    5  docker network ls
+    6  cd docker/
+    7  git pull
+    8  git config pull.rebase true
+    9  git pull
+   10  git add .
+   11  git commit dock02
+   12  git commit -m dock02
+   13  git pull
+   14  ls -la history/
+   15  history
+   16  history > history/day3-dock02-1
