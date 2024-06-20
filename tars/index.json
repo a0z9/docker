@@ -1,0 +1,1 @@
+{"schemaVersion":2,"mediaType":"application/vnd.oci.image.index.v1+json","manifests":[{"mediaType":"application/vnd.oci.image.manifest.v1+json","digest":"sha256:14d0f95b406b940e8b2688700979ff23e3c76b20c61311189ab3c3ec1d67844b","size":1001,"annotations":{"io.containerd.image.name":"docker.io/library/bb4-commit:latest","org.opencontainers.image.ref.name":"latest"}}]}

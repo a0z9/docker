@@ -2,14 +2,16 @@ FROM scratch
 
 WORKDIR app
 
-COPY bin/hello-params-s .
-COPY bin/hello-s .
+COPY bin/hello-params .
+COPY bin/hello2 .
 
 #CMD ["./hello2"]
 
-CMD ["./hello-params-s", "12", "17", "hello!"]
+#CMD ["./hello-params", "12", "17", "hello!"]
+ENTRYPOINT ["./hello-params", "12", "17", "hello!"]
+#CMD ./hello-params par1 'hi!'
 
-#CMD ["./hello3"]
+CMD ["./hello2"]
 
 
 

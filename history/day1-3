@@ -235,3 +235,104 @@
   235  docker inspect bb4-export:latest | less
   236  docker inspect bb4-commit:latest | less
   237  history > history/day1-3
+  238  git add .;git commit -m commit,export,import; git push
+  239  docker export bb4 | docker import - bb4-export2
+  240  docker images
+  241  docker save bb4-commit -o tars/bb4-comm-save.tar
+  242  mc
+  243  sudo apt install jq -y
+  244  cat tars/manifest.json | jq
+  245  cat tars/index.json | jq
+  246  docker images
+  247  docker rmi bb4-commit:latest 
+  248  docker images
+  249  docker load -i tars/bb4-comm-save.tar 
+  250  docker images
+  251  cd app-hello
+  252  ls -la
+  253  cat hello.c
+  254  c++ hello.c -o hello1
+  255  ./hello1 
+  256  vim hello.c 
+  257  ldd hello1
+  258  c++ hello.c -static  -o hello2
+  259  ls -la
+  260  mkdir bin
+  261  mv hello* bin/
+  262  ./bin/hello1
+  263  ./bin/hello2
+  264  tar -cvf hello.tar bin/hello1 bin/hello2
+  265  tar -tf hello.tar 
+  266  docker import hello.tar hello
+  267  docker images 
+  268  docker inspect hello:latest 
+  269  docker run --rm hello ./bin/hello1
+  270  docker run --rm hello ./bin/hello2
+  271  vim Dockerfile
+  272  docker build -t hello2 .
+  273  docker images
+  274  docker run --rm hello ./bin/hello2
+  275  docker run --rm hello2
+  276  mc
+  277  cd ..
+  278  git pull
+  279  ls -la app-hello/
+  280  ls -la app-hello/bin/
+  281  cd  app-hello/bin/
+  282  mv *.c ../
+  283  ls -la ..
+  284  cd ..
+  285  vim -R Dockerfile-libs 
+  286  c++ hello-params.c -static -o hello-params
+  287  ./hello-params 1 weqwe 2332
+  288* ls -la bi
+  289  c++ hello-params.c -static -o bin/hello-params
+  290  tar -cvf hello.tar bin/hello bin/hello2
+  291  tar -cvf hello.tar bin/
+  292  mc
+  293  cat Dockerfile4
+  294  vim Dockerfile4
+  295  docker build -t hello-param -f Dockerfile4 .
+  296  docker run -rm hello-param
+  297  docker run --rm hello-param
+  298  docker run --rm hello-param iuoiu
+  299  docker run --rm hello-param ./hello2
+  300  vim Dockerfile4
+  301  docker build -t hello-param -f Dockerfile4 .
+  302  docker run --rm hello-param ./hello2
+  303  docker run --rm hello-param 
+  304  vim Dockerfile4
+  305  docker build -t hello-param -f Dockerfile4 .
+  306  docker run --rm hello-param 
+  307  docker run --rm hello-param rrr
+  308  docker run --rm --entrypoint './hello-params 1 2'   hello-param 
+  309  vim Dockerfile4
+  310  docker run --rm --entrypoint '["./hello-params","1","2"]'   hello-param 
+  311  docker run --rm --entrypoint '["/app/hello-params","1","2"]'   hello-param 
+  312  docker run --rm --entrypoint "./hello-params 1 2"   hello-param 
+  313  docker run --rm  hello-param ls 
+  314  vim Dockerfile4
+  315  docker build -t hello-param -f Dockerfile4 .
+  316  docker run --rm  hello-param
+  317  docker run --rm hello-param 1212 12
+  318  docker run --rm hello-param
+  319  docker ps
+  320* docker inspect 
+  321  docker inspect gs --format '{{.HostConfig.RestartPolicy.Name}}'
+  322  docker inspect gs --format 'restart-policy => {{.HostConfig.RestartPolicy.Name}}'
+  323  docker container inspect gs --format 'restart-policy => {{.HostConfig.RestartPolicy.Name}}'
+  324  docker container inspect gs | jq
+  325  docker container inspect gs | jq '.[0]'
+  326  docker container inspect gs | jq '.[0].HostConfig'
+  327  docker container inspect gs | jq '.[0].HostConfig.HostConfig.Name'
+  328  docker container inspect gs | jq '.[0].HostConfig.RestartPolicy.Name'
+  329  docker container inspect gs | jq '.[0].HostConfig.RestartPolicy.Name' | tr -d '"'
+  330  docker image inspect bla-bla-busy:latest 
+  331  docker run --rm --entrypoint "./hello-params" hello-param 1 1
+  332  docker run --rm --entrypoint "./hello-params" hello-param
+  333  history
+  334  history | less
+  335  docker run --rm --entrypoint "./hello-params 1 2" hello-param
+  336  docker run --rm --entrypoint './hello-params' hello-param
+  337  echo $(date)
+  338  history > ../history/day1-3

@@ -3,6 +3,6 @@ FROM scratch
 WORKDIR /app
 
 #COPY hello-d .
-COPY bin/hello-s .
+COPY bin/hello2 .
 
-CMD ["./hello-s"]
+CMD ["./hello2"]
