@@ -1,0 +1,145 @@
+    1  ping ya.ru
+    2  ping dock01
+    3  sudo poweroff
+    4  docker info
+    5  sudo systemctl status docker.service 
+    6  sudo systemctl status containerd.service 
+    7  sudo reboot
+    8  ip a
+    9  mc
+   10  mcedit 1
+   11  cat 1
+   12  nano 1
+   13  kate&
+   14  ping ya.ru
+   15  ping fw
+   16  ping ya.ru
+   17  ip a
+   18  clone https://github.com/a0z9/docker
+   19  git clone https://github.com/a0z9/docker
+   20  cd docker/
+   21  ls -la
+   22  cd scripts/
+   23  ./install_docker_astra 
+   24  sudo systemctl status docker.service 
+   25  sudo systemctl status containerd.service 
+   26  docker docker ps -a
+   27  docker ps -a
+   28  docker search getting-started
+   29  docker search docker.io/docker/getting-started
+   30  docker search getting-started --filter stars=5
+   31  docker search getting-started --filter stars=1
+   32  docker run -d --name gs -p 8080:80 docker/getting-started
+   33  docker ps
+   34  docker images
+   35  docker run -d --name gs1 -p 8081:80 docker/getting-started
+   36  docker ps
+   37  docker logs gs -a
+   38  docker logs gs -f
+   39  docker logs gs1 -f
+   40  cd docker/
+   41  history 
+   42  mkhistory history
+   43  mk history 
+   44  mkdir history 
+   45  history > history/day1-1
+   46  git config --global user.name and
+   47  git config --global user.email a0z9@rambler.ru
+   48  git add .
+   49  git commit -m init
+   50  git push
+   51  docker pull busybox
+   52  docker images
+   53  docker ps -a
+   54  docker create --name bb -it busybox
+   55  docker ps -a
+   56  docker start bb
+   57  docker ps -a
+   58  docker run --name bb1 -itd busybox
+   59  docker ps -a
+   60  docker top bb
+   61  docker top gs
+   62  ps aux | grep nginx
+   63  docker top gs
+   64  docker exec -it gs sh
+   65  docker exec -it gs /bin/sh
+   66  docker stats
+   67  sudo systemctl restart docker.service 
+   68  docker ps -a
+   69  docker ps -qa
+   70  docker start $(docker ps -qa)
+   71  docker ps
+   72  docker pause gs
+   73  docker ps
+   74  docker unpause gs
+   75  docker ps
+   76  docker stop gs1 bb1
+   77  docker start gs1 bb1
+   78  docker stop gs1 bb1
+   79  docker start gs1 bb1
+   80  docker top gs1
+   81  docker ps
+   82  kill -9 4845
+   83  sudo kill -9 4845
+   84  docker ps
+   85  docker ps -a
+   86  docker p
+   87  docker ps
+   88  docker start gs1
+   89  docker ps
+   90  docker update --restart always gs bb
+   91  docker update --restart unless-stopped gs1
+   92  sudo systemctl restart docker.service 
+   93  docker ps
+   94  docker stop gs1
+   95  docker stop gs bb
+   96  docker ps
+   97  sudo systemctl restart docker.service 
+   98  docker ps
+   99  docker run --name bb2 --restart always  -itd busybox
+  100  docker ps
+  101  sudo systemctl restart docker.service 
+  102  docker ps
+  103  docker rm -f bb2
+  104  mkdir aap1
+  105  mkdir app1
+  106  rm -f aap1/
+  107  rm -rf aap1/
+  108  cd app1
+  109  echo ip=1.1.2.3 > data.conf
+  110  echo ip2=10.1.2.3 >> data.conf
+  111  cat data.conf
+  112  docker cp data.conf bb:/app/
+  113  docker cp data.conf bb:/
+  114  docker exec bb ls /
+  115  docker exec bb cat data.conf
+  116  cd ..
+  117  docker cp bb:/data.conf .
+  118  ls -la
+  119  rm data.conf 
+  120  docker ps
+  121  docker ps -a
+  122  docker attach bb 
+  123  docker ps -a
+  124  docker attach bb 
+  125  docker ps -a
+  126  docker attach bb 
+  127  docker ps -a
+  128  docker kill bb
+  129  docker ps -a
+  130  docker attach --detach-keys ctr-k bb
+  131  docker start bb
+  132  docker attach --detach-keys ctr-k bb
+  133  docker attach --detach-keys ctrk bb
+  134  docker attach --detach-keys 'ctr-k' bb
+  135  docker attach --detach-keys 'ctrl-k' bb
+  136  docker attach bb
+  137  docker ps
+  138  docker attach gs
+  139  docker ps
+  140  docker attach gs1
+  141  docker start gs1
+  142  docker attach gs1
+  143  docker ps
+  144  top
+  145  history > history/day1-2
