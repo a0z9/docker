@@ -143,3 +143,26 @@
   143  docker ps
   144  top
   145  history > history/day1-2
+  146  git add .
+  147  git commit -m docker-cli-basics
+  148  git push
+  149  ip a
+  150  ping dock01
+  151  docker search doc01.learn.local:8083/busybox
+  152  sudo mkdir -p /etc/docker/certs.d/dock01.learn.local:8083
+  153  scp student@dock01:/etc/docker/certs.d/dock01.learn.local:8083/ca.crt .
+  154  ls -la
+  155  sudo cp ca.crt /etc/docker/certs.d/dock01.learn.local\:8083/
+  156  docker search doc01.learn.local:8083/busybox
+  157  docker search dock01.learn.local:8083/busybox
+  158  docker run --name bb3 -dit dock01.learn.local/busybox:v1
+  159  docker run --name bb3 -dit dock01.learn.local:8083/busybox:v1
+  160  docker ps
+  161  docker pull busybox:1.35
+  162  docker tag busybox:1.35 dock01.learn.local:8083/busybox:v1.35
+  163  docker ps
+  164  docker images
+  165  docker push dock01.learn.local:8083/busybox:v1.35 
+  166  docker login dock01.learn.local:8083 -u docker
+  167  docker push dock01.learn.local:8083/busybox:v1.35 
+  168  history > history/day1-2
