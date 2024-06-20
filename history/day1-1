@@ -1,0 +1,45 @@
+    1  ping ya.ru
+    2  ping dock01
+    3  sudo poweroff
+    4  docker info
+    5  sudo systemctl status docker.service 
+    6  sudo systemctl status containerd.service 
+    7  sudo reboot
+    8  ip a
+    9  mc
+   10  mcedit 1
+   11  cat 1
+   12  nano 1
+   13  kate&
+   14  ping ya.ru
+   15  ping fw
+   16  ping ya.ru
+   17  ip a
+   18  clone https://github.com/a0z9/docker
+   19  git clone https://github.com/a0z9/docker
+   20  cd docker/
+   21  ls -la
+   22  cd scripts/
+   23  ./install_docker_astra 
+   24  sudo systemctl status docker.service 
+   25  sudo systemctl status containerd.service 
+   26  docker docker ps -a
+   27  docker ps -a
+   28  docker search getting-started
+   29  docker search docker.io/docker/getting-started
+   30  docker search getting-started --filter stars=5
+   31  docker search getting-started --filter stars=1
+   32  docker run -d --name gs -p 8080:80 docker/getting-started
+   33  docker ps
+   34  docker images
+   35  docker run -d --name gs1 -p 8081:80 docker/getting-started
+   36  docker ps
+   37  docker logs gs -a
+   38  docker logs gs -f
+   39  docker logs gs1 -f
+   40  cd docker/
+   41  history 
+   42  mkhistory history
+   43  mk history 
+   44  mkdir history 
+   45  history > history/day1-1
