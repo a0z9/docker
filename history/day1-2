@@ -166,3 +166,33 @@
   166  docker login dock01.learn.local:8083 -u docker
   167  docker push dock01.learn.local:8083/busybox:v1.35 
   168  history > history/day1-2
+  169  git add .
+  170  git commit -m registry
+  171  git push
+  172  curl -k https://dock01.learn.local:8083/v2/_catalog
+  173  curl -k https://dock01.learn.local:8083/v2/_catalog ;echo
+  174  curl -k https://dock01.learn.local:8083/v2/busybox/tags/list ;echo
+  175  docker images
+  176  docker rmi busybox:1.35
+  177  docker images
+  178  docker rmi dock01.learn.local:8083/busybox:v1.35 
+  179  docker ps
+  180  docker pull dock01.learn.local:8083/busybox:v1.35 
+  181  docker ps
+  182  docker images
+  183  docker rmi dock01.learn.local:8083/busybox:v1
+  184  docker rmi dock01.learn.local:8083/busybox:v1 -f
+  185  docker images
+  186  docker ps
+  187  docker rm bb3 -f
+  188  docker rmi f
+  189  docker images
+  190  history
+  191  cd app1
+  192  vim Dockerfile
+  193  ls -la
+  194  docker build -t dock01.learn.local:8083/busybox:v2 .
+  195  docker push dock01.learn.local:8083/busybox:v2
+  196  docker images
+  197  cd ..
+  198  history > history/day1-2

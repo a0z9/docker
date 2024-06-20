@@ -1,0 +1,24 @@
+# Test docker file ...
+# ARG ...
+
+
+#FROM server:port/repo:tag
+FROM busybox
+
+
+ENV DATA="Docker training" VERSION="1.0"
+
+LABEL local.learn.docker.maintainer="a0z9@rambler.ru"
+
+# RUN apt install mc && comm2 && comm3 ....
+
+RUN mkdir -p 1/2/3 3 base_dir
+RUN touch 1 2 3 && echo $(date) > 4
+
+COPY data.conf /1/
+
+
+
+#COMMIT ! NO SUCH INSTRUCTION!!!
+
+
