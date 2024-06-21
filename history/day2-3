@@ -516,3 +516,57 @@
   516  docker exec bb-log1 cat /logs/info.log
   517  cd ..
   518  history > history/day2-3
+  519  git add .;git commit -m 'volumes'; git push
+  520  docker network ls
+  521  docker psa
+  522  docker ps
+  523  ip a
+  524  docker stop $(docker ps -q)
+  525  docker ps
+  526  ip a
+  527  docker network inspect bridge 
+  528  docker start wapp1 wapp2 bb-log1 bb-log2
+  529  docker ps
+  530  docker network inspect bridge 
+  531  docker system prune -af
+  532* docker 
+  533  docker ps
+  534  docker volume ls
+  535  docker network inspect bridge 
+  536  docker exec bb-log1 ping bb-log2
+  537  docker exec bb-log1 ping 172.18.0.1
+  538  docker exec bb-log1 ping 172.18.0.2
+  539  docker exec bb-log1 ping 172.18.0.3
+  540  docker exec bb-log1 ping 172.18.0.4
+  541  docker exec bb-log1 cat /etc/hosts
+  542  docker exec bb-log1 cat /etc/resolv.conf
+  543  docker rm -f bb-log2
+  544  docker run --name bb-log2 -v wapp_logs:/logs --link wapp2:db2   -dit busybox
+  545  docker exec bb-log2 ping wapp2
+  546  docker exec bb-log2 ping db2
+  547  docker exec bb-log2 ping wapp1
+  548  docker exec bb-log2 cat /etc/hosts
+  549  docker exec bb-log2 env
+  550  docker network create net1
+  551  docker network inspect net1
+  552  docker network create net2 --subnet 10.11.12.0/24 --gateway 10.11.12.254
+  553  ip a
+  554  docker network create net2 --subnet 10.11.12.0/24 --gateway 10.11.12.254 --driver bridge
+  555  docker ps
+  556  docker network inspect net2
+  557  docker network disconnect bridge bb-log1
+  558  docker network disconnect bridge wapp1
+  559  docker network ls
+  560  docker exec bb-log1 ip a
+  561  docker network connect net2  wapp1
+  562  docker network connect net2 bb-log1
+  563  docker network inspect net2
+  564  docker exec bb-log1 pin wapp1
+  565  docker exec bb-log1 ping wapp1
+  566  docker exec wapp1 bb-log1
+  567  docker exec wapp1 ping bb-log1
+  568  docker exec wapp1 cat /etc/resolv.conf
+  569  docker exec wapp1 cat /etc/hosts
+  570  docker restart wapp1
+  571  docker exec wapp1 cat /etc/hosts
+  572  history > history/day2-3
