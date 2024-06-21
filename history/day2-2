@@ -450,3 +450,17 @@
   450  docker exec -it bb sh
   451  cd ..
   452  history > history/day2-2
+  453  git add .;git commit -m 'quotas'; git push
+  454  history -w
+  455  docker run --name bb-cats -v ~/app2:/var/app2/www -e SITE_DIR='/var/www' -dit busybox
+  456  docker ps
+  457  docker run --name bb-cats2 -v ~/docker/app2:/var/app2/www -e SITE_DIR='/var/www' -dit busybox
+  458  docker rm -f bb-cats
+  459  docker ps
+  460  docker exec -it bb-cats2 sh
+  461  ls app2
+  462  docker run --name bb-cats-ro -v ~/docker/app2:/var/app2/www:ro -e SITE_DIR='/var/www' -dit busybox
+  463  docker exec -it bb-cats3 sh
+  464  docker exec -it bb-cats-ro sh
+  465  docker inspect bb-cats-ro | less
+  466  history > history/day2-2
