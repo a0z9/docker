@@ -1,7 +1,0 @@
-Can't use SSL_get_servername
-depth=0 C = RU, ST = NN, L = NN, O = Andestech, OU = Docker, CN = *.dock01.learn.local
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 C = RU, ST = NN, L = NN, O = Andestech, OU = Docker, CN = *.dock01.learn.local
-verify return:1
-DONE

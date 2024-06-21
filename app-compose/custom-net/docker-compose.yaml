@@ -20,7 +20,7 @@ services:
     #image: a0z9/dock:wapp.0.5
     #image: dock01:5001/wapp:0.5
     ports:
-      - "8092:8080"
+      - "8072:8080"
     environment:
       - DOCK_HOST=dock03-compose-nets
       - VERSION=1.2

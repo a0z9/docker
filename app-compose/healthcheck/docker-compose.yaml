@@ -18,7 +18,7 @@ services:
       - DOCK_HOST=dock01-compose
       - VERSION=1.2
     healthcheck:
-      test: wget -q --spider localhost:8080
+      test: wget -q --spider localhost:8081
       interval: 4s
       timeout: 3s
       retries: 3
