@@ -1,0 +1,30 @@
+    1  cd /sys/fs/cgroup/cpu/docker/f9d5879015725bcff325a3daa9a722eb2ae74873fdc66b12ff2863cdb24abc12/
+    2  ls- la
+    3  ls - la
+    4  ls -la
+    5  cd /sys/fs/cgroup/blkio/docker/f9d5879015725bcff325a3daa9a722eb2ae74873fdc66b12ff2863cdb24abc12/
+    6  ls -la
+    7  lsblk -f
+    8  lsblk
+    9  sudo sh -c 'echo "8:2 1045000"' > blkio.throttle.write_bps_device 
+   10  sudo sh -c 'echo "8:2 1045000"' > blkio.throttle.write_bps_device
+   11  df 
+   12  lsblk
+   13  ls -la /dev/disk/by-id/ata-VBOX_*
+   14  ls -la /dev/
+   15  lsblk
+   16  sh -c 'echo "8:2 1045000"' > blkio.throttle.write_bps_device
+   17  cat blkio.throttle.write_bps_device 
+   18  sh -c 'echo "253:0 1045000"' > blkio.throttle.write_bps_device
+   19  sh -c 'echo "8:0 1045000"' > blkio.throttle.write_bps_device
+   20  sh -c 'echo "8:2 1045000"' > blkio.throttle.write_bps_device
+   21  sh -c 'echo "8:0 1045000"' > blkio.throttle.write_bps_device
+   22  lsblk
+   23  sh -c 'echo "8:0 1045000"' > blkio.throttle.write_bps_device
+   24  cd ..
+   25  ls -la
+   26  cd f9d5879015725bcff325a3daa9a722eb2ae74873fdc66b12ff2863cdb24abc12/
+   27  sh -c 'echo "8:0 1045000"' > blkio.throttle.write_bps_device 
+   28  cat blkio.throttle.write_bps_device 
+   29  history 
+   30  history > /home/student/docker/history/day2-root-quotas-cgroup
