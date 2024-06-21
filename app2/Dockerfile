@@ -8,4 +8,6 @@ EXPOSE 8080
 
 COPY wapp.js .
 
+VOLUME /var/wapp
+
 ENTRYPOINT ["node","wapp.js"]
