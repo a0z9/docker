@@ -1,0 +1,47 @@
+#version: "3.9"
+
+services:
+  bb-cpu:
+    image: dock01.learn.local:8083/busybox:v1
+    command: dd if=/dev/zero of=/dev/null 
+    depends_on:
+      - wapp-svc
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 20M
+
+
+  wapp-svc:
+    image: dock01.learn.local:8083/wapp
+    #image: a0z9/dock:wapp.0.5
+    #image: dock01:5001/wapp:0.5
+    ports:
+      - "8061:8080"
+    environment:
+      - DOCK_HOST=dock03-compose-nets
+      - VERSION=1.2
+
+    volumes:
+      - wapp:/home/data
+
+    deploy:
+      resources:
+        limits:
+          memory: 30M
+
+#    hostname: wapp1
+networks:
+  default:
+    name: net5
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.55.0/24
+          gateway: 192.168.55.1
+
+volumes:
+  wapp: {}
+
+  

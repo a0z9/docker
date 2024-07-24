@@ -1,0 +1,9 @@
+FROM scratch
+
+WORKDIR app
+
+COPY bin/hello-s .
+COPY bin/hello-d .
+
+#ENTRYPOINT ["./hello2"]
+

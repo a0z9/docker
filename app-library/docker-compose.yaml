@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  mdb:
+    build: ./db_scripts
+    healthcheck:
+      test: mysqlcheck -ppass library
+      interval: 5s
+      retries: 3
+      timeout: 5s
+      #    start_period: 60s
+
+  web:
+    build: ./web_scripts
+    links: 
+      - "mdb:mariadb"
+    environment:
+      - MDB_USER=root
+      - MDB_PASS=pass
+      - DOCK_HOST=$HOST_NAME
+      - LOG_DIR=/var/log/web2_log
+
+    depends_on: 
+      mdb:
+        condition: service_healthy 
+    ports:
+      - "8099:8080"
+    volumes:
+      - web_log:/var/log/web2_log
+
+volumes:
+  web_log:
+
