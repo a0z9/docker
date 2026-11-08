@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#dock_user=student
+
+echoI() { tput setaf 2 && if [ $1 = '-n' ]; then echo -n "${*:2}"; else echo "$*"; fi && tput sgr0; }
+echoE() { tput setaf 1 && tput bold && echo "$*" && tput sgr0; }
+echoW() { tput setaf 3 && tput bold && echo "$*" && tput sgr0; }
+
+echoI Preparing to install docker to debian host..
+for p in docker docker-engine docker.io docker-doc docker-compose podman-docker containerd runc; do apt-get remove $p; done
+
+apt update
+apt install -y ca-certificates curl
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+echoI Installing Docker Engine...
+
+apt update
+apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+apt clean
+
+
+
+echoI Add user $SUDO_USER to docker group...
+
+usermod -aG docker $SUDO_USER
+sudo -u $SUDO_USER newgrp docker
+
+echoI Finished.
+
+
