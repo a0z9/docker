@@ -29,7 +29,8 @@ apt clean
 echoI Add user $SUDO_USER to docker group...
 
 usermod -aG docker $SUDO_USER
-sudo -u $SUDO_USER newgrp docker
+#sudo -u $SUDO_USER newgrp docker
+su -c "newgrp docker" $SUDO_USER
 
 echoI Finished.
 
