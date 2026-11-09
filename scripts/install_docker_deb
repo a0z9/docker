@@ -1,5 +1,8 @@
 #!/bin/bash
-# src: https://docs.docker.com/engine/install/debian/
+
+# srcs: 
+# https://docs.docker.com/engine/install/debian/
+# https://docs.docker.com/engine/install/linux-postinstall/
 
 echoI() { tput setaf 2 && if [ $1 = '-n' ]; then echo -n "${*:2}"; else echo "$*"; fi && tput sgr0; }
 echoE() { tput setaf 1 && tput bold && echo "$*" && tput sgr0; }
