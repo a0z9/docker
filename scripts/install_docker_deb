@@ -1,6 +1,5 @@
 #!/bin/bash
-
-#dock_user=student
+# src: https://docs.docker.com/engine/install/debian/
 
 echoI() { tput setaf 2 && if [ $1 = '-n' ]; then echo -n "${*:2}"; else echo "$*"; fi && tput sgr0; }
 echoE() { tput setaf 1 && tput bold && echo "$*" && tput sgr0; }
